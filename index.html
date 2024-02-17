@@ -41,6 +41,20 @@
       referrerpolicy="no-referrer"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/danger.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/global.css" />
+
     <title>Decodificador de Texto</title>
   </head>
   <body>
@@ -49,18 +63,23 @@
     </header>
     <main>
       <section>
-        <h1>Digite seu texto</h1>
+        <textarea name="textoPrincipal" rows="10" cols="50">
+Digite o seu Texto
+        </textarea>
       </section>
       <section>
-        <div>
+        <div class="notificacao">
+          <i class="gg-danger"></i>
           <p>Apenas letras minúsculas e sem acento</p>
         </div>
-        <div><a href="">Criptografar</a> <a href="">Descriptografar</a></div>
+        <div class="btn">
+          <a href="">Criptografar</a> <a href="">Descriptografar</a>
+        </div>
+      </section>
+      <section class="decodificador">
+        <h2>Nenhuma mensagem encontrada</h2>
+        <p>Digite um texto que você deseja criptografar ou descriptografar</p>
       </section>
     </main>
-    <section>
-      <h1>Nenhuma mensagem encontrada</h1>
-      <p>Digite um texto que você deseja criptografar ou descriptografar</p>
-    </section>
   </body>
 </html>

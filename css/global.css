@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --primary-color: #2c2c34;
+    --second-color: #F5CB5C;
+    --third-color: #E8EDDF;
+}
+
+html {
+    font-family: Inter, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--primary-color);
+}
+
+header {
+    padding: 5%;
+}
+
+main {
+ padding: 15% 5%;
+}
+
+h1 {
+    color: var(--second-color);
+}
+
+textarea {
+    width: 100%;
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--second-color);
+    text-align: justify;
+    font-size: 1.5rem;
+    border: none;
+}
+
+i {
+    color: var(--third-color);
+    margin: auto 0;
+}
+
+.notificacao {
+    display: flex;
+    gap: 1rem;
+}
+
+a {
+    padding: 15px;
+    text-decoration: none;
+    color: var(--third-color);
+    text-align: center;
+    border-radius: 20px;
+    &:nth-child(1) {
+        background-color: var(--second-color);
+    }
+    &:nth-child(2) {
+        color: var(--second-color);
+        border: 1px solid;
+    }
+}
+
+.btn {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+div p{
+    color: var(--third-color);
+}
+
+.decodificador {
+    margin: 1.5rem 0 0 0;
+    background-color: var(--third-color);
+    padding: 1.8rem;
+    border-radius: 3rem;
+}
+
+.decodificador h2, p {
+    text-align: center;
+}
+
