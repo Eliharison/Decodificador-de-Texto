@@ -58,28 +58,29 @@
     <title>Decodificador de Texto</title>
   </head>
   <body>
-    <header>
-      <img src="./assets/Logos.png" alt="Logo alura + ONE" />
-    </header>
+    <header><img src="./assets/image__logo.png" alt="Logo alura + ONE" /></header>
     <main>
-      <section>
-        <textarea name="textoPrincipal" cols="50">
-Digite o seu Texto
-        </textarea>
-      </section>
-      <section>
-        <div class="notificacao">
-          <i class="gg-danger"></i>
-          <p>Apenas letras minúsculas e sem acento</p>
-        </div>
-        <div class="btn">
-          <a href="">Criptografar</a> <a href="">Descriptografar</a>
-        </div>
-      </section>
-      <section class="decodificador">
-        <h2>Nenhuma mensagem encontrada</h2>
-        <p>Digite um texto que você deseja criptografar ou descriptografar</p>
-      </section>
+      <div class="textarea">
+        <textarea name="textoPrincipal" cols="50" rows="10"></textarea>
+        <div class="placeholder">Digite seu texto Aqui!</div>
+      </div>
     </main>
+    <div class="container">
+      <div class="notificacao">
+        <i class="gg-danger"></i>
+        <p>Apenas letras minúsculas e sem acento</p>
+      </div>
+      <div class="buttons">
+        <a href="">Criptografar</a>
+        <a href="">Descriptografar</a>
+      </div>
+    </div>
+    <section class="decodificador">
+      <img src="./assets/image__search.svg" alt="">
+      <h2>Nenhuma mensagem encontrada</h2>
+      <p>Digite um texto que você deseja criptografar ou descriptografar</p>
+    </section>
+    <footer><h2>Desenvolvido por Eliharison</h2></footer>
+    <script src="./js/app.js"></script>
   </body>
 </html>
