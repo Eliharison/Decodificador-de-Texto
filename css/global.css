@@ -2,7 +2,11 @@
 
 :root {
   --primary-color: #2c2c34;
+  --primary-color__100: #41414e;
+  --primary-color__200: #272730; 
   --second-color: #f5cb5c;
+  --second-color__100: #f1cf71;
+  --second-color__200: #d8b555;
   --third-color: #e8eddf;
   --font-title: 2rem;
 }
@@ -55,6 +59,7 @@ h1 {
 textarea {
   width: 100%;
   height: 100%;
+  padding: 0;
   background-color: var(--primary-color);
   border: none;
   color: var(--second-color);
@@ -104,16 +109,29 @@ a {
   color: var(--third-color);
   text-align: center;
   border-radius: 20px;
+  cursor: pointer;
   &:nth-child(1) {
     background-color: var(--second-color);
+    &:hover {
+      background-color: var(--second-color__100);
+    }
+    &:active {
+      background-color: var(--second-color__200);
+    }
   }
   &:nth-child(2) {
     color: var(--second-color);
     border: 1px solid;
+    &:hover {
+      background-color: var(--primary-color__100);
+    }
+    &:active {
+      background-color: var(--primary-color__200);
+    }
   }
 }
 
-div p {
+.notificacao p {
   color: var(--third-color);
 }
 
@@ -131,6 +149,11 @@ div p {
 .decodificador h2,
 p {
   text-align: center;
+}
+
+.mensagem__inexistente {
+  width: 100%;
+  height: 100%;
 }
 
 footer {
@@ -162,14 +185,14 @@ footer {
 @media (min-width: 1200px) {
   body {
     min-height: 95.9vh;
-    grid-template-rows: auto auto 5vh;
+    grid-template-rows: 150px 1fr 20vh 5vh;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
       "header header section"
       "main main section"
       "container container section"
       "footer footer section";
-      padding: 2vw 2vw 0 2vw;
+      padding: 2vw 5vw 0 5vw;
       column-gap: 15px;
   }
 
