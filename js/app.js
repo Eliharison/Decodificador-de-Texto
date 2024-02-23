@@ -5,37 +5,64 @@ function criptografar() {
   const valor = document.querySelector("#textoPrincipal").value;
 
   if (valor) {
-    adicionar__estilo__filhos("mensagem__inexistente", "display: none;");
-
+    remover__filhos("resultado");
+    adicionar__estilo("mensagem__inexistente", "none");
     const caracter__separado = valor.split("");
     let texto__criptografado = "";
     caracter__separado.forEach((elemento) => {
-      texto__criptografado += cifra__cesar(elemento, 3);
+      switch (elemento) {
+        case "e":
+          elemento = "enter";
+          break;
+        case "i":
+          elemento = "imes";
+          break;
+        case "a":
+          elemento = "ai";
+          break;
+        case "o":
+          elemento = "ober";
+          break;
+        case "u":
+          elemento = "ufat";
+          break;
+      }
+      texto__criptografado += elemento;
     });
 
-    adicionar__html("p", "resultado", texto__criptografado);
+    adicionar__html("p", "resultado", texto__criptografado, "texto");
+    adicionar__estilo("resultado", "flex");
+    botao_copiar();
   } else {
-    remover__filhos("resultado")
-    adicionar__estilo__filhos("mensagem__inexistente", "display: block;");
+    remover__filhos("resultado");
+    adicionar__estilo("mensagem__inexistente", "block");
   }
 }
 
-function adicionar__html(tagFilha, id, conteudo) {
+function botao_copiar() {
+  adicionar__html("a", "resultado", "Copiar", "copiar");
+  click = document.getElementById("copiar");
+  click.setAttribute("onclick", "copiar()");
+}
+
+function copiar() {
+  const elemento = document.getElementById("texto");
+  const conteudo = elemento.textContent || elemento.innerText;
+  navigator.clipboard.writeText(conteudo);
+}
+
+function adicionar__html(tagFilha, id, conteudo, criarId) {
   let filho = document.createElement(tagFilha);
   let pai = document.getElementById(id);
   filho.textContent = conteudo;
 
   pai.appendChild(filho);
+  filho.setAttribute("id", criarId);
 }
 
-function adicionar__estilo__filhos(id, estilo) {
-  let section = document.getElementById(id);
-  if (section) {
-    let filhos = section.children;
-    for (let i = 0; i < filhos.length; i++) {
-      filhos[i].style.cssText += estilo;
-    }
-  }
+function adicionar__estilo(id, propriedade) {
+  let div = document.getElementById(id);
+  div.style.display = propriedade;
 }
 
 function remover__filhos(id) {
@@ -45,17 +72,8 @@ function remover__filhos(id) {
   }
 }
 
-function cifra__cesar(letra, deslocamento) {
-  if (letra.match(/[a-zA-Z]/)) {
-    let codigo__ascii = letra.charCodeAt(0);
-    let limite = codigo__ascii <= 90 ? 65 : 97;
-    return String.fromCharCode(
-      codigo__ascii - limite + (deslocamento % 26) + limite
-    );
-  }
-  return letra;
-}
-
 textarea.addEventListener("input", function () {
   placeholder.style.display = this.value ? "none" : "block";
 });
+
+
