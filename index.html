@@ -14,8 +14,11 @@
     />
 
     <meta name="author" content="Eliharison" />
-    <!--URL Inexistente-->
-    <meta property="og:url" content="http://www.url.com" />
+
+    <meta
+      property="og:url"
+      content="https://www.flaticon.com/br/download/icon/3500698?icon_id=3500698&author=784&team=784&keyword=decodificar&pack=3500607&style=1&style_id=15&format=png&color=%23000000&colored=2&size=16&selection=1&type=standard"
+    />
     <meta property="og:type" content="portfolio" />
     <meta
       property="og:title"
@@ -26,11 +29,10 @@
       content="Um decodificador de texto desenvolvido como parte do desafio proposto pela Alura em parceria com Oracle ONE para a formação de novos desenvolvedores."
     />
 
-    <!--Imagem Inexistente-->
     <meta
       property="og:image"
       itemprop="image"
-      content="http://www.url.com/imagem.jpg"
+      content="https://www.flaticon.com/br/download/icon/3500698?icon_id=3500698&author=784&team=784&keyword=decodificar&pack=3500607&style=1&style_id=15&format=png&color=%23000000&colored=2&size=16&selection=1&type=standard"
     />
 
     <link
@@ -53,7 +55,16 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./css/global.css" />
+    <link
+      rel="shortcut icon"
+      href="https://www.flaticon.com/br/download/icon/3500698?icon_id=3500698&author=784&team=784&keyword=decodificar&pack=3500607&style=1&style_id=15&format=png&color=%23000000&colored=2&size=16&selection=1&type=standard"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/utilities.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
 
     <title>Decodificador de Texto</title>
   </head>
@@ -92,6 +103,13 @@
         <p>Digite um texto que você deseja criptografar ou descriptografar</p>
       </div>
     </section>
+    <div class="popup" id="popup">
+      <img id="alerta__popup" src="./assets/image__alerta.svg" alt="Alerta" />
+      <p>O texto não pode conter letras maiúsculas ou acentos!</p>
+      <button id="botao__fechar" onclick="fechar__popup()">Fechar</button>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <script src="./js/utilities.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>

@@ -1,0 +1,39 @@
+textarea:focus + .placeholder {
+  opacity: 0;
+}
+
+.decodificador img {
+  display: none;
+}
+
+.decodificador {
+  margin: 15px 0 15px 0;
+  background-color: var(--third-color);
+  padding: 1.8rem;
+  border-radius: 3rem;
+}
+
+.decodificador h2,
+p {
+  text-align: center;
+}
+
+#resultado {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#copiar {
+  margin: 20px;
+}
+
+#texto {
+  word-break: break-all;
+}
+
+.mensagem__inexistente {
+  width: 100%;
+  height: 100%;
+}

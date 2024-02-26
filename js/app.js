@@ -1,12 +1,18 @@
 const textarea = document.querySelector(".textarea textarea");
 const placeholder = document.querySelector(".placeholder");
+textarea.addEventListener("input", function () {
+  placeholder.style.display = this.value ? "none" : "block";
+});
 
 function criptografar() {
   const valor = document.querySelector("#textoPrincipal").value;
 
-  if (valor) {
+  if (valor && verificar__texto(valor)) {
+    verificar__texto(valor);
+    console.log(verificar__texto(valor));
     remover__filhos("resultado");
     adicionar__estilo("mensagem__inexistente", "none");
+
     const caracter__separado = valor.split("");
     let texto__criptografado = "";
     caracter__separado.forEach((elemento) => {
@@ -32,8 +38,9 @@ function criptografar() {
 
     adicionar__html("p", "resultado", texto__criptografado, "texto");
     adicionar__estilo("resultado", "flex");
-    botao_copiar();
+    botao__copiar();
   } else {
+    console.log(verificar__texto(valor));
     adicionar__estilo("resultado", "none");
     adicionar__estilo("mensagem__inexistente", "block");
   }
@@ -42,7 +49,7 @@ function criptografar() {
 function descriptografar() {
   const valor = document.querySelector("#textoPrincipal").value;
 
-  if (valor) {
+  if (valor && verificar__texto(valor)) {
     remover__filhos("resultado");
     adicionar__estilo("mensagem__inexistente", "none");
 
@@ -55,47 +62,11 @@ function descriptografar() {
 
     adicionar__html("p", "resultado", resultado, "texto");
     adicionar__estilo("resultado", "flex");
-    botao_copiar();
-    console.log(valor);
+    botao__copiar();
   } else {
     adicionar__estilo("resultado", "none");
     adicionar__estilo("mensagem__inexistente", "block");
   }
 }
 
-function botao_copiar() {
-  adicionar__html("a", "resultado", "Copiar", "copiar");
-  click = document.getElementById("copiar");
-  click.setAttribute("onclick", "copiar()");
-}
 
-function copiar() {
-  const elemento = document.getElementById("texto");
-  const conteudo = elemento.textContent || elemento.innerText;
-  navigator.clipboard.writeText(conteudo);
-}
-
-function adicionar__html(tagFilha, id, conteudo, criarId) {
-  let filho = document.createElement(tagFilha);
-  let pai = document.getElementById(id);
-  filho.textContent = conteudo;
-
-  pai.appendChild(filho);
-  filho.setAttribute("id", criarId);
-}
-
-function adicionar__estilo(id, propriedade) {
-  let div = document.getElementById(id);
-  div.style.display = propriedade;
-}
-
-function remover__filhos(id) {
-  let section = document.getElementById(id);
-  while (section.firstChild) {
-    section.removeChild(section.firstChild);
-  }
-}
-
-textarea.addEventListener("input", function () {
-  placeholder.style.display = this.value ? "none" : "block";
-});

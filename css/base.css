@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+:root {
+  --primary-color: #2c2c34;
+  --primary-color__100: #41414e;
+  --primary-color__200: #272730;
+  --second-color: #f5cb5c;
+  --second-color__100: #f1cf71;
+  --second-color__200: #d8b555;
+  --third-color: #e8eddf;
+  --font-title: 2rem;
+}
+
+html {
+  font-family: Inter, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--primary-color);
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "container"
+    "section";
+  padding: 5vw;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+.container {
+  grid-area: container;
+}
+
+section {
+  grid-area: section;
+}
+
+h1 {
+  color: var(--second-color);
+}
+
+.textarea {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--second-color);
+  text-align: justify;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.placeholder {
+  position: absolute;
+  top: 1px;
+  left: 0%;
+  color: var(--second-color);
+  font-size: var(--font-title);
+  font-style: bold;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
