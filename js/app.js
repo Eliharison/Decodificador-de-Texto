@@ -34,7 +34,31 @@ function criptografar() {
     adicionar__estilo("resultado", "flex");
     botao_copiar();
   } else {
+    adicionar__estilo("resultado", "none");
+    adicionar__estilo("mensagem__inexistente", "block");
+  }
+}
+
+function descriptografar() {
+  const valor = document.querySelector("#textoPrincipal").value;
+
+  if (valor) {
     remover__filhos("resultado");
+    adicionar__estilo("mensagem__inexistente", "none");
+
+    let resultado = valor
+      .replace(/enter/g, "e")
+      .replace(/ai/g, "a")
+      .replace(/imes/g, "i")
+      .replace(/ufat/g, "u")
+      .replace(/ober/g, "o");
+
+    adicionar__html("p", "resultado", resultado, "texto");
+    adicionar__estilo("resultado", "flex");
+    botao_copiar();
+    console.log(valor);
+  } else {
+    adicionar__estilo("resultado", "none");
     adicionar__estilo("mensagem__inexistente", "block");
   }
 }
@@ -75,5 +99,3 @@ function remover__filhos(id) {
 textarea.addEventListener("input", function () {
   placeholder.style.display = this.value ? "none" : "block";
 });
-
-
